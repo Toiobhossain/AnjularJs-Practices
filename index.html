@@ -5,17 +5,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
 </head>
 <body>
-    <div>
-        <label>User Name</label>
-<input type="text" ng-model="name">
-<p ng-bind="name"></p>
-<label>Phone</label>
-<input type="text" ng-model="phone">
-<p ng-bind="phone"></p>
-    </div>
-    <div ng-init ="FirstName='Toiob Hossain'">
-        <p ng-bind="FirstName"></p>
-    </div>
+ <!-- ng-app, ng-model, ng-init, ng-bind, {{}}-->
+ <div ng-init="EmployeeInfo=[
+ {name:'ToiobHossain',ID:'TVL093',Country:'Bangladesh',Age:'25',Gender:'Male',Designation:'SoftwareEngineer'},
+ {name:'ToiobHossain',ID:'TVL093',Country:'Bangladesh',Age:'25',Gender:'Male',Designation:'SoftwareEngineer'},
+ {name:'ToiobHossain',ID:'TVL093',Country:'Bangladesh',Age:'25',Gender:'Male',Designation:'SoftwareEngineer'},
+ {name:'ToiobHossain',ID:'TVL093',Country:'Bangladesh',Age:'25',Gender:'Male',Designation:'SoftwareEngineer'}]">
+ <ul>
+    <li ng-repeat="item in EmployeeInfo">
+        {{item.name+','+item.ID+','+item.Country+','+item.Age+','+item.Gender+','+item.Designation}}
+    </li>
+ </ul>
+ </div>
 
 </body>
 </html>
