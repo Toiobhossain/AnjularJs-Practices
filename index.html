@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="myapp">
 <head>
 <title>Angular Js</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+<!--some detecative of angular ng-invalid, ng-empty, ng-not-empty, ng-untouched, ng-valid,-->
+<style>
+    input.ng-invalid{
+        background-color: red;
+    }
+</style>
 </head>
 <body>
- <!-- ng-app, ng-model, ng-init, ng-bind, {{}}-->
+ <!-- ng-app, ng-model, ng-init, ng-bind, {{}}, ng-module, ng-controller, ng-filter-->
  <div ng-init="EmployeeInfo=[
  {name:'ToiobHossain',ID:'TVL093',Country:'Bangladesh',Age:'25',Gender:'Male',Designation:'SoftwareEngineer'},
  {name:'ToiobHossain',ID:'TVL093',Country:'Bangladesh',Age:'25',Gender:'Male',Designation:'SoftwareEngineer'},
@@ -19,7 +25,20 @@
  <form name="myForm">
 Email:<input type="email" name="MyEmail" ng-model="text">
 <span ng-show="myForm.MyEmail.$error.email">Invalid Email Address</span>
+User Name:<input name="UserName" ng-model="myText">
  </form>
  </div>
+
+ <div ng-controller="myClt">
+<input ng-model="name">
+<h4>My Name is {{name}}</h4>
+ </div>
+ <script type="text/javascript">
+    var app = angular.module('myapp',[]);
+    app.controller('myClt',function($scope){
+       $scope.name="";
+    });
+
+ </script>
 </body>
 </html>
