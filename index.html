@@ -16,7 +16,10 @@
         {{item.name+','+item.ID+','+item.Country+','+item.Age+','+item.Gender+','+item.Designation}}
     </li>
  </ul>
+ <form name="myForm">
+Email:<input type="email" name="MyEmail" ng-model="text">
+<span ng-show="myForm.MyEmail.$error.email">Invalid Email Address</span>
+ </form>
  </div>
-
 </body>
 </html>
